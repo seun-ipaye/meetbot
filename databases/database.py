@@ -10,6 +10,8 @@ DATABASE_URL = os.getenv("DATABASE_URL").replace(
     "postgresql://", "postgresql+asyncpg://"
 )
 
+print(f"Connecting to: {DATABASE_URL}...")
+
 engine = create_async_engine(DATABASE_URL, echo=True)
 
 AsyncSessionLocal = sessionmaker(
